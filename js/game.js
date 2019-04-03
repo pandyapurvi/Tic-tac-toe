@@ -8,45 +8,23 @@ let player1 = [];
 let player2 = [];
 let click = 0; //currently there is no clicked on any button.
 let array = ['','','','','','','','',''];
-let gameState = null;
-let board = [0,1,2,3,4,5,6,7,8];
-console.log(board[1]);
-
- //let currentPlayer = click % 2 === 0 ? 'X' : 'O';
-
-
+const displayFunction = function ( player, letter,id ){
+  $(`#${id}`).text(letter);
+     click++;
+     player.push(id);
+};
 
 const clickedButton = function (id) {
-  let indexArray = id;
-  // let array[inxedArray] = id;
 
-  //console.log(indexArray);
-
-  if ( array[indexArray] === ''){
+  if ( array[id] === ''){
     if ( click % 2 === 0 ){
-      // document.getElementById(id).innerHTML = 'X';
-     $(`#${id}`).text('X');
-        click++;
-        //player1.push(id)
-        player1.push(id);
-// console.log(player1);
-// console.log(board[0]);
-//         if(board[0]== player1[0] && board[1]== player1[1] && board[2]==player1[2]){
-//             console.log(` wins`);
-//         }
-        //console.log(id);
-        //let candidate1 = player1.sort().join("");
+      displayFunction(player1,'X',id)
 
-
-        //console.log(player1);
     } else {
-      //document.getElementById(id).innerHTML = 'O';
-       $(`#${id}`).text('O');
-          click++;
-          player2.push(id);
+      displayFunction(player2,'O',id)
 
-    }
-     array[indexArray] = id;
+     }
+     array[id] = id;
 
    }
     if(array[9] === "finish"){
@@ -69,6 +47,7 @@ const clickedButton = function (id) {
         }
         count = 0;
       }
+
       count = 0;
       for(let i = 0; i < winning.length; i++){
         for(let j = 0; j < player2.length; j++){
@@ -84,34 +63,35 @@ const clickedButton = function (id) {
       }
       count = 0;
       }
-}
-    // for(let i = 0; i < winning.length; i++){
-    //   let win = winning[i];
-    //   function arrayContainsArray (player1, win) {
-    //     return win.every(function (value) {
-    //       console.log(win);
-    //       console.log(value);
-    //       if(player1.indexOf(value) >= 0){
-    //         return;
-    //       }
-    //     });
-    //   }
-    //
-    // console.log(arrayContainsArray(player1, win));
-    // };
-    // for(let i = 0; i < winning.length; i++){
-    //   //console.log(winning[i]);
-    //   if(winning[i] === candidate1) {
-    //     console.log(`Player 1 is winner`);
-    //     array = [0,1,2,3,4,5,6,7,8];
-    //
-    //   } else if(winning[i] === candidate2) {
-    //     console.log(`Plarer 2 is winner`);
-    //     array = [0,1,2,3,4,5,6,7,8];
-    //   }
-    // }
+    }
+
   }
 
+};
+
+const playAgain = function (){
+  click = 0;
+  player1 = [];
+  player2 =[];
+  array = ['','','','','','','','',''];
+  $('#0').text('-');
+  $('#1').text('-');
+  $('#2').text('-');
+  $('#3').text('-');
+  $('#4').text('-');
+  $('#5').text('-');
+  $('#6').text('-');
+  $('#7').text('-');
+  $('#8').text('-');
+
+};
+
+const confirmRefresh = function () {
+let okToRefresh = confirm("Do you really want to refresh the page?");
+if (okToRefresh)
+	{
+			setTimeout("location.reload(true);",1500);
+	}
 };
 
 $( document ).ready( function (){
@@ -151,19 +131,12 @@ $( document ).ready( function (){
   $('#8').on('click', function (){
     clickedButton(8);
   });
+
+  $('#play').on('click',function(){
+    playAgain();
+  });
+
+  $('#reload').on('click',function(){
+    confirmRefresh();
+  });
 });
-
-
-// function arrayContainsArray (superset, subset) {
-//   return subset.every(function (value) {
-//     return (superset.indexOf(value) >= 0);
-//   });
-// }
-//
-// var array1 = ['A', 'B', 'C', 'D', 'E'];
-// var array2 = ['B', 'C', 'E'];
-// var array3 = ['B', 'C', 'Z'];
-// var array4 = [];
-//
-//
-// console.log(arrayContainsArray(array1, array3));
