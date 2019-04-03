@@ -1,37 +1,78 @@
 
 
-body {
-  display: block;
-}
-h1 {
-  text-align: center;
-  font-size: 40px;
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+body{
+ background-image:;
+ background-size:100%;
 
 }
-.grid {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-}
 
-.squareButton {
-  width: 90px;
-  height: 90px;
-  margin:3px 0;
-  background-color: #ddd;
+h1{
   color: red;
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+}
+p {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  font-size: 70px;
+  text-align: center;
+  color:blue;
+
+}
+td:hover{
+  border: 5px solid red;
+  background-color: yellow;
+}
+.vertical-line {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+
+}
+.horizontal-line{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.button{
+  margin-left: 20em;
   font-size: 20px;
-  border-radius: 0.5em;
+  background-color: ;
+  box-shadow: 2px red;
 
 }
 
-#button {
-  margin-top: 100px;
-  font-size: 20px;
-  border-radius: 1em;
+label{
+  margin-left: 20em;
+}
+
+/*.hide{
+  margin-left: 35%;
+  opacity:10;
+  margin-top*/
+
+.hide {
+  margin-left: 43%;
+  overflow:hidden;
+  height:0px;
+  width:220px;
+
+  -webkit-transition: height 1s ease-in-out;
+     -moz-transition: height 1s ease-in-out;
+          transition: height 1s ease-in-out;
+}
+
+.hide.visible {
+  height: 293px;
 }

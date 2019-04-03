@@ -1,13 +1,11 @@
-//make winning possibilies
-//take a player1 as an blank Array
-//take a player2 as an blank Array
-//push the clicked letter in respective arrays of player1moves
 
 const winning = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];//winning possibilities
 let player1 = [];
 let player2 = [];
 let click = 0; //currently there is no clicked on any button.
 let array = ['','','','','','','','',''];
+let score1 = 0;
+let score2 = 0;
 const displayFunction = function ( player, letter,id ){
   $(`#${id}`).text(letter);
      click++;
@@ -18,16 +16,19 @@ const clickedButton = function (id) {
 
   if ( array[id] === ''){
     if ( click % 2 === 0 ){
-      displayFunction(player1,'X',id)
+      displayFunction(player1,'X',id);
+      $(`#${id}`).css('color', 'red');
 
     } else {
-      displayFunction(player2,'O',id)
+      displayFunction(player2,'O',id);
+      $(`#${id}`).css('color','blue');
 
      }
      array[id] = id;
 
    }
     if(array[9] === "finish"){
+
       return;
     }else{
     if (click >=5){
@@ -38,7 +39,10 @@ const clickedButton = function (id) {
           if(winning[i].includes(player1[j])){
           count++
           if(count === 3){
+            $('p').text('Player 1 is winner.');
             console.log("player1 is winner");
+            score1 += 10;
+            $('#score1').val(score1);
             array = [0,1,2,3,4,5,6,7,8,"finish"];
             return;
 
@@ -54,7 +58,10 @@ const clickedButton = function (id) {
           if(winning[i].includes(player2[j])){
           count++
           if(count == 3){
+            $('p').text('Player 2 is winner.');
             console.log("player2 is winner");
+            score2 += 10;
+            $('#score2').val(score2);
             array = [0,1,2,3,4,5,6,7,8,"finish"];
             return;
 
@@ -63,6 +70,9 @@ const clickedButton = function (id) {
       }
       count = 0;
       }
+    }
+    if(click == 9){
+      $('.hide').addClass('visible');
     }
 
   }
@@ -74,24 +84,25 @@ const playAgain = function (){
   player1 = [];
   player2 =[];
   array = ['','','','','','','','',''];
-  $('#0').text('-');
-  $('#1').text('-');
-  $('#2').text('-');
-  $('#3').text('-');
-  $('#4').text('-');
-  $('#5').text('-');
-  $('#6').text('-');
-  $('#7').text('-');
-  $('#8').text('-');
+  $('#0').text('');
+  $('#1').text('');
+  $('#2').text('');
+  $('#3').text('');
+  $('#4').text('');
+  $('#5').text('');
+  $('#6').text('');
+  $('#7').text('');
+  $('#8').text('');
+  $('.hide').removeClass('visible');
 
 };
 
 const confirmRefresh = function () {
 let okToRefresh = confirm("Do you really want to refresh the page?");
 if (okToRefresh)
-	{
-			setTimeout("location.reload(true);",1500);
-	}
+  {
+      setTimeout("location.reload(true);",1500);
+  }
 };
 
 $( document ).ready( function (){
