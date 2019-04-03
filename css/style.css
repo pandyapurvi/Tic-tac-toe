@@ -17,21 +17,19 @@ h1{
   margin-left: 2.5em;
 }
 p {
-  font-size: 20px;
+  font-size: 30px;
   color: black;
   text-align: center;
+  font-family: 'Kaushan Script', cursive;
 }
 
 table {
 
   margin: auto;
-
-
 }
 
 td {
-
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   width: 100px;
   height: 100px;
   font-size: 50px;
@@ -56,16 +54,24 @@ td:hover{
   border-bottom: 2px solid #ffdb58;
 }
 .button{
-  margin-top: 2em;
+  margin-top:;
   font-size: 20px;
   background-color: ;
   box-shadow: 2px red;
+
 }
 #play {
   margin-left: 27em;
+  border-radius:1em;
+  background-color: #CD5C5C;
+  border: 2px	#8B0000;
+  padding:5px;
 }
 #reload {
   margin-left: 10em;
+  border-radius: 1em;
+  background-color: #add8e6;
+  padding: 5px;
 }
 label{
   margin-left: 10em;

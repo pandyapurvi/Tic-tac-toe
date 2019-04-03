@@ -73,6 +73,7 @@ const clickedButton = function (id) {
     }
     if(click == 9){
       $('.hide').addClass('visible');
+      $('p').text("It's a draw");
     }
 
   }
@@ -94,6 +95,7 @@ const playAgain = function (){
   $('#7').text('');
   $('#8').text('');
   $('.hide').removeClass('visible');
+  $('p').text("");
 
 };
 
@@ -142,6 +144,13 @@ $( document ).ready( function (){
   $('#8').on('click', function (){
     clickedButton(8);
   });
+
+  // $('.board').on('click', function () {
+  //    let number = $(this).attr('id');
+  //   // console.log(number);
+  //   clickedButton(number);
+  //   //clickedButton($(this).attr('id'));
+  // })
 
   $('#play').on('click',function(){
     playAgain();
