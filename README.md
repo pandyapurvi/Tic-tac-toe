@@ -1,13 +1,14 @@
 Tic! Tac! Toe!
 ========================
-Welcome to the TicTacToe Game UI, a simple Javascript web application allowing users to interact with our Game Engine. The goal of this project is to make possible for users to have a richer experience when playing TicTacToe.
+Welcome to the TicTacToe Game UI, a simple Javascript web application allowing users to interact with our Game Engine. The goal of this project is to make possible for users to have a richer experience when playing TicTacToe. This game is for younger kids.
 
 Author: Purvi Pandya; *pandyapurvi134@yahoo.in*
 Date: April 4, 2019
 
 Link For Tic Tac Toe
-https://pandyapurvi.github.io/glowing-journey/
 =====================
+https://pandyapurvi.github.io/glowing-journey/
+
 
 Technologies Used
 =================
