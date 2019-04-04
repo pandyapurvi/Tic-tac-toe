@@ -143,13 +143,6 @@ $( document ).ready( function () {
     clickedButton( 8 );
   });
 
-  // $('.board').on('click', function () {
-  //    let number = $(this).attr('id');
-  //   // console.log(number);
-  //   clickedButton(number);
-  //   //clickedButton($(this).attr('id'));
-  // })
-
   $( '#play' ).on( 'click',function() {
     playAgain();
   });
