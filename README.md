@@ -9,6 +9,8 @@ Link For Tic Tac Toe
 =====================
 https://pandyapurvi.github.io/glowing-journey/
 
+![Alt text](desktop/img.jpg?raw=true "Tic Tac tow")
+
 
 Technologies Used
 =================
