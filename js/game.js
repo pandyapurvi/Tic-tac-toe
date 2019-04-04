@@ -38,8 +38,8 @@ const clickedButton = function ( id ) {
           if( winning[i].includes( player1[j] ) ) {//code for superset and subset
           count++//if subset is in given superset then click will be 3
           if( count === 3 ) {
-            $( 'p' ).text( 'Player 1 is winner.' );
-            console.log( "player1 is winner." );
+            $( 'p' ).text( 'Jerry is winner.' );
+            console.log( "Jerry is winner." );
             score1 += 10;
             $( '#score1' ).val( score1 );
             array = [0,1,2,3,4,5,6,7,8,"finish"];//if player1 wins game then array will become full and game is finished here.
@@ -57,8 +57,8 @@ const clickedButton = function ( id ) {
           if( winning[i].includes( player2[j] ) ) {
           count++
           if( count === 3 ) {
-            $( 'p' ).text( 'Player 2 is winner.' );
-            console.log( "player2 is winner." );
+            $( 'p' ).text( 'Tom is winner.' );
+            console.log( "Tom is winner." );
             score2 += 10;
             $( '#score2' ).val( score2 );
             array = [0,1,2,3,4,5,6,7,8,"finish"];
