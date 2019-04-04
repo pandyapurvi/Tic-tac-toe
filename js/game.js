@@ -7,44 +7,41 @@ let array = ['','','','','','','','',''];
 let score1 = 0;
 let score2 = 0;
 
-//fucntion to display either "o" or "x"
-const displayFunction = function ( player, letter,id ){
-  $(`#${id}`).text(letter);
+//function to display either "O" or "X"
+const displayFunction = function ( player, letter,id ) {
+  $( `#${id}` ).text( letter );//code for printing letter "X" or "O" in selected id.
      click++;//This will add one click each time player will play.
-     player.push(id);
+     player.push( id );//code to push clicked id in respective player
 };
 
-const clickedButton = function (id) {
+const clickedButton = function ( id ) {
 
-  if ( array[id] === ''){//if array is empty player can play game.
-    if ( click % 2 === 0 ){
-      displayFunction(player1,'X',id);
-      $(`#${id}`).css('color', 'red');
+  if ( array[id] === '' ) {//if array is empty player can play game.
+    if ( click % 2 === 0 ) {
+      displayFunction( player1,'X',id );
+      $( `#${id}` ).css( 'color', 'red' );
 
     } else {
-      displayFunction(player2,'O',id);
-      $(`#${id}`).css('color','blue');
-
+      displayFunction( player2,'O',id );
+      $( `#${id}` ).css( 'color','blue' );
      }
-     array[id] = id; //this code is to push id into an empty array
+     array[id] = id; //this code is to push clicked id into an empty array
 
    }
-    if(array[9] === "finish"){ //if someone wins or draw, the empty array will become full array with an extra 9th position.
-
+    if( array[9] === "finish" ) { //if someone wins or draw, the empty array will become full array with an extra 9th position.
       return;
-    }else{
-    if (click >=5){
-
-    let count = 0 ;
-      for(let i = 0; i < winning.length; i++){//wiining is superset, it has total 8 sets.
-        for(let j = 0; j < player1.length; j++){//player is subset
-          if(winning[i].includes(player1[j])){//code for superset and subset
-          count++//if subset is in superset then click will be 3
-          if(count === 3){
-            $('p').text('Player 1 is winner.');
-            console.log("player1 is winner");
+    } else {
+    if ( click >=5 ){
+    let count = 0 ; //count 0 is to begin the loop from scratch, for every winning possibilities
+      for( let i = 0; i < winning.length; i++ ) {//wiining is superset, it has total 8 sets.
+        for( let j = 0; j < player1.length; j++ ) {//player is subset
+          if( winning[i].includes( player1[j] ) ) {//code for superset and subset
+          count++//if subset is in given superset then click will be 3
+          if( count === 3 ) {
+            $( 'p' ).text( 'Player 1 is winner.' );
+            console.log( "player1 is winner." );
             score1 += 10;
-            $('#score1').val(score1);
+            $( '#score1' ).val( score1 );
             array = [0,1,2,3,4,5,6,7,8,"finish"];//if player1 wins game then array will become full and game is finished here.
             return;
 
@@ -54,28 +51,26 @@ const clickedButton = function (id) {
         count = 0; //if counts are less than 3 then all the counts like 1 or 2 will become 0 here.
       }
 
-      count = 0;
-      for(let i = 0; i < winning.length; i++){
-        for(let j = 0; j < player2.length; j++){
-          if(winning[i].includes(player2[j])){
+      count = 0;//this is same loop for player 2
+      for( let i = 0; i < winning.length; i++ ) {
+        for( let j = 0; j < player2.length; j++ ) {
+          if( winning[i].includes( player2[j] ) ) {
           count++
-          if(count == 3){
-            $('p').text('Player 2 is winner.');
-            console.log("player2 is winner.");
+          if( count === 3 ) {
+            $( 'p' ).text( 'Player 2 is winner.' );
+            console.log( "player2 is winner." );
             score2 += 10;
-            $('#score2').val(score2);
+            $( '#score2' ).val( score2 );
             array = [0,1,2,3,4,5,6,7,8,"finish"];
             return;
-
-          }
+            }
           }
       }
       count = 0;
       }
     }
-    if(click === 9){//this is for withdraw
-      $('.hide').addClass('visible');
-      $('p').text("It's a draw.");
+    if( click === 9 ){//this is for withdraw
+      $( 'p' ).text( "It's a draw." );
     }
 
   }
@@ -83,70 +78,69 @@ const clickedButton = function (id) {
 };
 
 //function for playAgain task
-const playAgain = function (){
+const playAgain = function () {
   click = 0;
   player1 = [];
-  player2 =[];
+  player2 = [];
   array = ['','','','','','','','',''];
-  $('#0').text('');
-  $('#1').text('');
-  $('#2').text('');
-  $('#3').text('');
-  $('#4').text('');
-  $('#5').text('');
-  $('#6').text('');
-  $('#7').text('');
-  $('#8').text('');
-  $('.hide').removeClass('visible');
-  $('p').text("");
+  $( '#0' ).text('');
+  $( '#1' ).text('');
+  $( '#2' ).text('');
+  $( '#3' ).text('');
+  $( '#4' ).text('');
+  $( '#5' ).text('');
+  $( '#6' ).text('');
+  $( '#7' ).text('');
+  $( '#8' ).text('');
+  $( 'p' ).text("");
 
 };
 
 //function to refresh the page.
 const confirmRefresh = function () {
-let okToRefresh = confirm("Do you really want to refresh the page?");
-if (okToRefresh)
+let okToRefresh = confirm( "Do you really want to refresh the page?" );
+if ( okToRefresh )
   {
-      setTimeout("location.reload(true);",1500);
+      setTimeout( "location.reload(true);",1500 );
   }
 };
 
-$( document ).ready( function (){
+$( document ).ready( function () {
 
-  $('#0').on('click', function (){
-    clickedButton(0);
+  $( '#0' ).on( 'click', function () {
+    clickedButton( 0 );
   });
 
-  $('#1').on('click', function (){
-    clickedButton(1);
+  $( '#1' ).on( 'click', function () {
+    clickedButton( 1 );
   });
 
-  $('#2').on('click', function (){
-    clickedButton(2);
+  $( '#2' ).on( 'click', function () {
+    clickedButton( 2 );
   });
 
-  $('#3').on('click', function (){
-    clickedButton(3);
+  $( '#3' ).on( 'click', function () {
+    clickedButton( 3 );
   });
 
-  $('#4').on('click', function (){
-    clickedButton(4);
+  $( '#4' ).on( 'click', function () {
+    clickedButton( 4 ) ;
   });
 
-  $('#5').on('click', function (){
-    clickedButton(5);
+  $( '#5' ).on( 'click', function () {
+    clickedButton( 5 );
   });
 
-  $('#6').on('click', function (){
-    clickedButton(6);
+  $( '#6' ).on( 'click', function () {
+    clickedButton( 6 );
   });
 
-  $('#7').on('click', function (){
-    clickedButton(7);
+  $( '#7' ).on( 'click', function () {
+    clickedButton( 7 );
   });
 
-  $('#8').on('click', function (){
-    clickedButton(8);
+  $( '#8' ).on( 'click', function () {
+    clickedButton( 8 );
   });
 
   // $('.board').on('click', function () {
@@ -156,11 +150,11 @@ $( document ).ready( function (){
   //   //clickedButton($(this).attr('id'));
   // })
 
-  $('#play').on('click',function(){
+  $( '#play' ).on( 'click',function() {
     playAgain();
   });
 
-  $('#reload').on('click',function(){
+  $( '#reload' ).on( 'click',function() {
     confirmRefresh();
   });
 });
