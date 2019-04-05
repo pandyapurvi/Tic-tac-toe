@@ -7,7 +7,7 @@ Date: April 4, 2019
 
 Link For Tic Tac Toe
 =====================
-https://pandyapurvi.github.io/glowing-journey/
+https://pandyapurvi.github.io/Tic-tac-toe/
 
 ![Tic Tac Toe](Game.png?raw=true "Tic Tac Toe")
 
