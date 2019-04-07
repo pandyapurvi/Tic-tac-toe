@@ -6,6 +6,9 @@ let click = 0; //currently there is no clicked on any button.
 let array = ['','','','','','','','',''];
 let score1 = 0;
 let score2 = 0;
+$('#radio').click(function() {
+        click=1;
+});
 
 //function to display either "O" or "X"
 const displayFunction = function ( player, letter,id ) {
@@ -32,16 +35,18 @@ const clickedButton = function ( id ) {
       return;
     } else {
     if ( click >=5 ){
+
     let count = 0 ; //count 0 is to begin the loop from scratch, for every winning possibilities
       for( let i = 0; i < winning.length; i++ ) {//wiining is superset, it has total 8 sets.
         for( let j = 0; j < player1.length; j++ ) {//player is subset
           if( winning[i].includes( player1[j] ) ) {//code for superset and subset
           count++//if subset is in given superset then click will be 3
           if( count === 3 ) {
-            $( 'p' ).text( 'Jerry is winner.' );
-            console.log( "Jerry is winner." );
+            $( 'p' ).first().text( 'Peppa is winner.' );
+            console.log( "Peppa is winner." );
             score1 += 10;
             $( '#score1' ).val( score1 );
+            $('.peppa').css({'transform': 'rotate(360deg)', 'transition':'3s'});
             array = [0,1,2,3,4,5,6,7,8,"finish"];//if player1 wins game then array will become full and game is finished here.
             return;
 
@@ -57,10 +62,11 @@ const clickedButton = function ( id ) {
           if( winning[i].includes( player2[j] ) ) {
           count++
           if( count === 3 ) {
-            $( 'p' ).text( 'Tom is winner.' );
-            console.log( "Tom is winner." );
+            $( 'p' ).first().text( 'Geroge is winner.' );
+            console.log( "George is winner." );
             score2 += 10;
             $( '#score2' ).val( score2 );
+            $('.george').css({'transform': 'rotate(360deg)', 'transition':'3s'});
             array = [0,1,2,3,4,5,6,7,8,"finish"];
             return;
             }
@@ -70,7 +76,7 @@ const clickedButton = function ( id ) {
       }
     }
     if( click === 9 ){//this is for withdraw
-      $( 'p' ).text( "It's a draw." );
+      $( 'p' ).first().text( "It's a draw." );
     }
 
   }
@@ -92,7 +98,7 @@ const playAgain = function () {
   $( '#6' ).text('');
   $( '#7' ).text('');
   $( '#8' ).text('');
-  $( 'p' ).text("");
+  $( 'p' ).first().text("");
 
 };
 

@@ -9,15 +9,26 @@
 
 </head>
 <body>
-  <h1>Tic! Tac! Toe!</h1>
-  <p id="para"></p>
+  <h1>Tic! Tac! Toe! With Peppa and George</h1>
+  <div id="container">
+  <div class="result">
+    <p id="para"></p>
+  </div>
 
-  <label>Jerry's Score:</label>
-  <input type="text" name="score" id="score1">
-  </br></br>
-  <label>Tom's Score:</label>
-  <input type="text" name="score" id="score2">
+  <div id="control">
+    <p class="text">Who wants to play first?</p>
+      <label class="radio">
+        <input type="radio" name="Peppa">
+         Peppa
+      </label>
+      <label class="radio">
+        <input type="radio" id="radio" name="George" checked>
+        George
+      </label>
+        <img src="img/peppa.png" class="peppa" width="200px" height="200px"/>
+</div>
 
+<div id="main">
   <table>
     <tr>
       <td id="0"></td>
@@ -35,11 +46,33 @@
       <td id="8"></td>
     </tr>
   </table>
+      <button class="button" id="play">REPLAY</button>
+      <button class="button" id="reload">RESET-SCORE</button>
+</div>
 
-  <button value="button" class="button" id="play">Play Again</button>
-  <button value="button" class="button" id="reload">Re-start Game</button></br>
 
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/game.js">  </script>
-</body>
+  <div id="side">
+    <label class="score">Peppa's Score: &nbsp;</label>
+      <input type="text" name="score" id="score1">
+        </br></br>
+    <label class="score">George's Score:</label>
+      <input type="text" name="score" id="score2">
+      <img src="img/george.jpg" class="george" width="200px" height="200px"/>
+  </div>
+</div>
+
+  <div id="footer">
+      <footer>
+        <p class="name"><strong>Purvi Pandya</strong> copy right &copy;</p>
+      <div class="end">
+        <a href="https://github.com/pandyapurvi/Tic-tac-toe"><img src="img/github.png" target="_blank" class="social" id="github"></a>
+        <a href="/www.linkedin.com/in/pandyapurvi/"><img src="img/linkedin.png" target="_blank" class="social" id="linkedin"></a>
+     </div>
+
+    </footer>
+  </div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/game.js">  </script>
+  </body>
 </html>

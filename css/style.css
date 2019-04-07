@@ -1,38 +1,72 @@
-
+/* global style */
 
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
 body {
-   background-image: url("https://i.imgur.com/NeSGmzf.png");
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: cover;
-}
-
+  width:100%;
+  height: 100%;
+  margin: 0;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF0WJml8GkXwsTcakxSDdLHPeEyLTOlTGflxinSKxjdm1CXAuNsA");
+  }
+  /* style for containder div */
+  #container {
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 0;
+  }
+  /* style for header */
 h1 {
-  color: red;
+  background-color: #fff;
+  opacity: 0.5;
+  color: brown;
   text-align: center;
   font-family: 'Kaushan Script', cursive;
   font-size: 50px;
   margin-top: 30px;
-  margin-left: 2.5em;
+  margin: 1em 0;
+  margin-bottom: 0;
 }
+/* style for winning or draw */
+.result {
+  background: linear-gradient(#e66465, #9198e5);
+  }
 
-p {
+#para{
+  color:darkblue;
   font-size: 30px;
-  color: black;
   text-align: center;
   font-family: 'Kaushan Script', cursive;
 }
+/* style for first div of the main page */
+.text {
+  margin-top: 0;
+  color:yellow;
+  font-size: 30px;
+  font-family: 'Kaushan Script', cursive;
+ }
 
+ #control{
+  float: left;
+  width: 25%;
+}
+.radio {
+  font-size: 25px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+/* style for main content of the page */
+ #main {
+  width: 45%;
+  float: left;
+}
 table {
   position: relative;
   margin: auto;
+  cursor:cell;
 }
 
 td {
-  margin-bottom: 1em;
   position: relative;
   width: 100px;
   height: 100px;
@@ -42,9 +76,8 @@ td {
   font-family:'Kaushan Script', cursive;
   border-radius: 0.2em
 }
-
 td:hover {
-  border: 3px solid red;
+  border: 3px solid black;
   background-color: #ffdb58;
 }
 
@@ -58,48 +91,83 @@ td:hover {
   border-bottom: 2px solid #ffdb58;
 }
 .button {
+  padding: 10px 20px 10px 20px;;
+  border:30em solid balck;
+  cursor: pointer;
   font-size: 20px;
-  box-shadow: 2px red;
+  margin-top: 1em;
+  text-align: center;
+  font-weight: bold;
 }
-
-#play {
-  margin-left: 40vw;
-  border-radius: 1em;
-  background-color: #CD5C5C;
-  border: 2px	#8B0000;
-  padding: 5px;
-}
-
 #reload {
-  margin-left: 5vw;
-  border-radius: 1em;
-  background-color: #add8e6;
-  padding: 5px;
+  width: 190px;
+  margin-left: 11em;
+  border-radius: 30%;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  border: 5px dotted #000080;
+}
+#play{
+width: 130px;
+margin-left: 90px;
+border-radius: 30%;
+background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+border: 5px dotted #000080;
 }
 
-label {
-  margin-left: 38vw;
-  position: relative;
-  font-size: 20px;
-  font-weight: bold;
+/* style for the score and goerge img */
+#side{
+ float: right;
+ width: 30%;
 }
-
-#score1 {
-  font-weight: bold;
-  margin-left: 2vw;
-  font-size: 20px;
+.score {
+  font-size: 25px;
+  color: #fff;
+}
+#score1 , #score2 {
   background-color: #ffdb58;
-  width: 70px;
   border-radius: 0 1em;
   text-align: center;
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.peppa {
+  border-radius: 50%;
+  margin-top:40px;
+  margin-left: 200px;
+  border: 3px solid pink;
+}
+.george {
+  border-radius: 50%;
+  margin-top: 60px;
+  border: 3px solid blue;
 }
 
-#score2 {
-  font-weight: bold;
-  margin-left: 2vw;
+/* style for footer */
+#footer{
+    clear:both;
+    background-color:#fff;
+    opacity: 0.5;
+    bottom: 0;
+    position: absolute;
+    height:60px;
+    width: 100%;
+}
+.name{
+  display: inline-block;
+  width: 250px;
+  color: blue;
   font-size: 20px;
-  background-color: #ffdb58;
-  width: 70px;
-  border-radius: 0 1em;
-  text-align: center;
+}
+.end {
+  display: inline-block;
+}
+.social {
+height: 50px;
+vertical-align: middle;
+
+}
+#github {
+padding-right: 10px;
+margin-left: 65em;
 }
