@@ -9,7 +9,7 @@ Link For Tic Tac Toe
 =====================
 https://pandyapurvi.github.io/Tic-tac-toe/
 
-![Tic Tac Toe](Game.png?raw=true "Tic Tac Toe")
+![Tic Tac Toe](screen_pic.png?raw=true "Tic Tac Toe")
 
 
 Technologies Used
