@@ -41,12 +41,21 @@ const clickedButton = function ( id ) {
         for( let j = 0; j < player1.length; j++ ) {//player is subset
           if( winning[i].includes( player1[j] ) ) {//code for superset and subset
           count++//if subset is in given superset then click will be 3
+          let n = -360;
           if( count === 3 ) {
             $( 'p' ).first().text( 'Peppa is winner.' );
             console.log( "Peppa is winner." );
             score1 += 10;
+
             $( '#score1' ).val( score1 );
-            $('.peppa').css({'transform': 'rotate(360deg)', 'transition':'3s'});
+            $('.peppa').css({'transform': 'rotate('+n+'deg)', 'transition':'3s'});
+      //       setTimeout();
+      //       setTimeout(function() {
+      //     $('.peppa').css({
+      //         'transition':'all 0s ease-in-out 0s',
+      //         'transform':'rotate(0deg)'
+      //     });
+      // }, 4500);
             array = [0,1,2,3,4,5,6,7,8,"finish"];//if player1 wins game then array will become full and game is finished here.
             return;
 
@@ -98,7 +107,7 @@ const playAgain = function () {
   $( '#6' ).text('');
   $( '#7' ).text('');
   $( '#8' ).text('');
-  $( 'p' ).first().text("");
+  $( 'p' ).first().text(" Who Will Be The Winner ");
 
 };
 
