@@ -174,7 +174,7 @@ margin-left: 65em;
 
 
 /* S */
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 767px) {
   h1 {
     font-size: 1.5rem;
     margin-top: 20px;
@@ -284,7 +284,7 @@ margin-left: 65em;
      }
      #github {
      padding-right: 10px;
-     margin-left: 18em;
+     margin-left: 10em;
      }
 }
 /* M */
